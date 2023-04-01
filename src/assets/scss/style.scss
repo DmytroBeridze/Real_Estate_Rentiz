@@ -1,0 +1,16 @@
+@import "./_testStyle";
+
+* {
+  box-sizing: border-box;
+  
+}
+
+
+h1 {
+  color: rgb(68, 22, 82);
+  font-size: 50px;
+}
+.include{
+  color: var(--testColor);
+  font-size: 20px;
+}
