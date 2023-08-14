@@ -1,16 +1,9 @@
-@import "./_testStyle";
-
-* {
-  box-sizing: border-box;
-  
-}
-
-
-h1 {
-  color: rgb(68, 22, 82);
-  font-size: 50px;
-}
-.include{
-  color: var(--testColor);
-  font-size: 20px;
+@import "./normalize";
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap");
+// Regular 400 ; Medium 500 ; SemiBold 600
+body {
+  font-family: Work Sans;
+  color: var(--main-text-color);
+  background-color: var(--bg-color);
 }
