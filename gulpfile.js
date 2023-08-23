@@ -16,6 +16,12 @@ const sourcemaps = require("gulp-sourcemaps");
 // const distPath = "./dist";
 
 // !----------------dev
+// -----------------------api
+const devApi = () => {
+  return src("./src/api/**")
+    .pipe(dest("./dist/api"))
+    .pipe(browserSync.stream());
+};
 // -----------------------favicon
 const favicon = () => {
   return src("./src/*.ico")
@@ -112,11 +118,12 @@ const browsersync = () => {
   watch("./src/assets/img/**", devImg);
   watch("./src/assets/fonts/**", devFonts);
   watch("./src/*.ico", favicon);
+  watch("./src/api/**", devApi);
 };
 // ---------------------------tasks for start of console
 exports.default = series(
   clean,
-  parallel(devHtml, scripts, devImg, devFonts, favicon),
+  parallel(devHtml, scripts, devImg, devFonts, favicon, devApi),
   devStyles,
   browsersync
 );
@@ -176,6 +183,6 @@ const jsBuild = () => {
 
 exports.build = series(
   clean,
-  parallel(htmlBuild, cssBuild, jsBuild, devFonts, devImg, favicon),
+  parallel(htmlBuild, cssBuild, jsBuild, devFonts, devImg, favicon, devApi),
   browsersync
 );

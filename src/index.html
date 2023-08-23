@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- popup -->
+    <div class="main__popup popup-main">
+      <div class="popup-main__close">X</div>
+
+      <div class="popup-main__card">
+        <!-- <div class="popup-main__card-wrapper">
+          <div class="popup-main__img">
+            <img src="" alt="card" />
+          </div>
+          <div class="popup-main__desc"></div>
+          <div class="popup-main__price"></div>
+        </div> -->
+      </div>
+    </div>
+    <!-- -----------------------------header -->
     <header class="header">
       <div class="container header__container">
         <!-- -----------------------logo -->
@@ -46,7 +61,131 @@
         </div>
       </div>
     </header>
+    <!-- -------------------------Main -->
+    <main class="main">
+      <div class="main__container">
+        <div class="main__body">
+          <div class="main__information">
+            <div class="main__header">Perfect way to buy and sell a home</div>
+            <div class="main__text">
+              Diam vitae, nec mattis lectus quam pretium amet facilisis. Urna,
+              massa aliqua dui pellentesque. Ac, gravida in eget non amet eget
+              purus non.
+            </div>
+            <!-- ----------------serch -->
+            <div class="main__search search">
+              <div class="search__item" data-type="purpose">
+                <div class="search__info">
+                  <div class="search__header">
+                    <div class="search__type">purpose</div>
+                    <div class="search__icon"></div>
+                  </div>
+                  <div class="search__text">buy</div>
+                </div>
+                <ul class="search__list">
+                  <li>Buy</li>
+                  <li>Sale</li>
+                </ul>
+              </div>
 
+              <div class="search__item" data-type="location">
+                <div class="search__info">
+                  <div class="search__header">
+                    <div class="search__type">Location</div>
+                    <div class="search__icon"></div>
+                  </div>
+                  <div class="search__text">Toronto</div>
+                </div>
+                <ul class="search__list">
+                  <li>Toronto</li>
+                  <li>Vancouver</li>
+                  <li>Ottawa</li>
+                  <li>Winnipeg</li>
+                </ul>
+              </div>
+
+              <div class="search__item" data-type="type">
+                <div class="search__info">
+                  <div class="search__header">
+                    <div class="search__type">Type</div>
+                    <div class="search__icon"></div>
+                  </div>
+                  <div class="search__text">Apartment</div>
+                </div>
+                <ul class="search__list">
+                  <li>Apartment</li>
+                  <li>Bungalow</li>
+                  <li>Cottage</li>
+                  <li>Duplex</li>
+                  <li>House</li>
+                </ul>
+              </div>
+              <div class="search__item item-button">
+                <div class="search__button_container">Search</div>
+              </div>
+              <!----------------------serch error box -->
+              <div class="search__error"></div>
+            </div>
+          </div>
+          <div class="main__img">
+            <img src="./img/jpg/main/main-bungalow.jpg" alt="main" />
+          </div>
+        </div>
+      </div>
+      <!-- main decor -->
+      <div class="main__decor">
+        <svg
+          width="128"
+          height="501"
+          viewBox="0 0 128 501"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="92.4355"
+            y="314.033"
+            width="127.863"
+            height="123.867"
+            transform="rotate(42.3449 92.4355 314.033)"
+            fill="var(--accent-color)"
+            stroke="#121B25"
+            stroke-width="12"
+          />
+          <rect
+            x="92.4355"
+            y="212.355"
+            width="127.863"
+            height="123.867"
+            transform="rotate(42.3449 92.4355 212.355)"
+            fill="var(--accent-color)"
+            stroke="#121B25"
+            stroke-width="12"
+          />
+          <rect
+            x="92.4355"
+            y="110.678"
+            width="127.863"
+            height="123.867"
+            transform="rotate(42.3449 92.4355 110.678)"
+            fill="var(--accent-color)"
+            stroke="#121B25"
+            stroke-width="12"
+          />
+          <rect
+            x="92.4355"
+            y="9"
+            width="127.863"
+            height="123.867"
+            transform="rotate(42.3449 92.4355 9)"
+            fill="var(--accent-color)"
+            stroke="#121B25"
+            stroke-width="12"
+          />
+        </svg>
+      </div>
+    </main>
+
+    <!-- ------------------ -->
     <script src="./main.js"></script>
   </body>
 </html>
