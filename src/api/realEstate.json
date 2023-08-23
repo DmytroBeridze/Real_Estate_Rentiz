@@ -1,0 +1,98 @@
+[
+  {
+    "data": {
+      "purpose": "buy",
+      "location": "Ottawa",
+      "type": "Apartment"
+    },
+
+    "img": "./img/jpg/main/main-bungalow.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "price": "5000000",
+    "lot": "1"
+  },
+  {
+    "data": {
+      "purpose": "buy",
+      "location": "Toronto",
+      "type": "Apartment"
+    },
+
+    "img": "./img/jpg/main/main-bungalow.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "price": "7500000",
+    "lot": "2"
+  },
+  {
+    "data": {
+      "purpose": "buy",
+      "location": "Toronto",
+      "type": "Apartment"
+    },
+
+    "img": "./img/jpg/main/main-bungalow.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "price": "8000000",
+    "lot": "3"
+  },
+  {
+    "data": {
+      "purpose": "buy",
+      "location": "Toronto",
+      "type": "Apartment"
+    },
+
+    "img": "./img/jpg/main/main-bungalow.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "price": "9520000",
+    "lot": "4"
+  },
+  {
+    "data": {
+      "purpose": "buy",
+      "location": "Toronto",
+      "type": "Apartment"
+    },
+
+    "img": "./img/jpg/main/main-bungalow.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "price": "10000000",
+    "lot": "4"
+  },
+  {
+    "data": {
+      "purpose": "buy",
+      "location": "Toronto",
+      "type": "Apartment"
+    },
+
+    "img": "./img/jpg/main/main-bungalow.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "price": "12000000",
+    "lot": "14"
+  },
+  {
+    "data": {
+      "purpose": "sale",
+      "location": "Vancouver",
+      "type": "Apartment"
+    },
+
+    "img": "./img/jpg/main/main-bungalow.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "price": "4450000",
+    "lot": "5"
+  },
+  {
+    "data": {
+      "purpose": "sale",
+      "location": "Vancouver",
+      "type": "Apartment"
+    },
+
+    "img": "./img/jpg/main/main-bungalow.jpg",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "price": "5690000",
+    "lot": "6"
+  }
+]
