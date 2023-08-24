@@ -1,4 +1,3 @@
-import { getRequest } from "./realEstateRequest.js";
 import postRequest from "./postRequest.js";
 const filter = (
   buttonSelector,
@@ -27,14 +26,14 @@ const filter = (
 
   button.addEventListener("click", () => {
     const realEstateRequest = async () => {
-      const request = await fetch(URL),
-        response = await request.json();
-      return response;
+      const response = await fetch(URL),
+        json = await response.json();
+      return json;
     };
     // getRequest(URL)
     realEstateRequest()
-      .then((response) => {
-        let result = response.filter((elem) => {
+      .then((json) => {
+        let result = json.filter((elem) => {
           return (
             JSON.stringify(elem.data).toLowerCase() ==
             JSON.stringify(state).toLowerCase()
@@ -67,6 +66,7 @@ const filter = (
       })
       .then(() => {
         postRequest();
+
         closeButton.addEventListener("click", () => {
           closeModal();
         });
