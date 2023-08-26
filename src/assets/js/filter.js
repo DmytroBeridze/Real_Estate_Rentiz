@@ -1,15 +1,16 @@
 import postRequest from "./postRequest.js";
+import getRequest from "./getRequest";
 const filter = (
   buttonSelector,
   contentSelector,
-
+  errorContainer,
   closeButtonSelector,
   state,
-  json
+  URL
 ) => {
   const button = document.querySelector(buttonSelector),
     content = document.querySelector(contentSelector),
-    // errorBox = document.querySelector(errorContainer),
+    errorBox = document.querySelector(errorContainer),
     closeButton = document.querySelector(closeButtonSelector);
 
   // --------open
@@ -24,20 +25,20 @@ const filter = (
     document.querySelector(".popup-main__card").innerHTML = "";
   };
 
-  // getRequest(URL)
-
-  button.addEventListener("click", () => {
-    let result = json.filter((elem) => {
-      return (
-        JSON.stringify(elem.data).toLowerCase() ==
-        JSON.stringify(state).toLowerCase()
-      );
-    });
-    if (result.length > 0) {
-      result.forEach((elem) => {
-        let { img, price, description, lot, data } = elem;
-        let { purpose } = data;
-        document.querySelector(".popup-main__card").innerHTML += `
+  getRequest(URL)
+    .then((json) => {
+      button.addEventListener("click", () => {
+        let result = json.filter((elem) => {
+          return (
+            JSON.stringify(elem.data).toLowerCase() ==
+            JSON.stringify(state).toLowerCase()
+          );
+        });
+        if (result.length > 0) {
+          result.forEach((elem) => {
+            let { img, price, description, lot, data } = elem;
+            let { purpose } = data;
+            document.querySelector(".popup-main__card").innerHTML += `
             <div class="popup-main__card-wrapper">
           <div class="popup-main__img">
           <img src="${img}" alt="card">
@@ -51,34 +52,34 @@ const filter = (
           </div>
         </div>
         `;
+          });
+          openModal();
+        } else {
+          errorBox.innerHTML = "No offers";
+          errorBox.style.display = "block";
+        }
+        closeButton.addEventListener("click", () => {
+          closeModal();
+        });
+        postRequest();
       });
-      openModal();
-    } else {
-      errorBox.innerHTML = "No offers";
+    })
+    .then(() => {
+      // postRequest();
+
+      closeButton.addEventListener("click", () => {
+        closeModal();
+      });
+    })
+    .catch((e) => {
+      errorBox.innerHTML = "Error";
       errorBox.style.display = "block";
-    }
-    closeButton.addEventListener("click", () => {
-      closeModal();
+    })
+    .finally(() => {
+      setTimeout(() => {
+        errorBox.style.display = "none";
+      }, 3000);
     });
-    postRequest();
-  });
-
-  // .then(() => {
-  //   // postRequest();
-
-  //   closeButton.addEventListener("click", () => {
-  //     closeModal();
-  //   });
-  // })
-  // .catch((e) => {
-  //   errorBox.innerHTML = "Error";
-  //   errorBox.style.display = "block";
-  // })
-  // .finally(() => {
-  //   setTimeout(() => {
-  //     errorBox.style.display = "none";
-  //   }, 3000);
-  // });
 };
 
 export default filter;
