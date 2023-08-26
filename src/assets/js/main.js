@@ -1,6 +1,7 @@
 import burger from "./burger";
 import search from "./search.js";
 import filter from "./filter.js";
+// import popupDescriptionOpen from "./popupDescriptionOpen.js";
 
 const errorBox = document.querySelector(".search__error");
 
@@ -27,4 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
     state,
     "./api/realEstate.json"
   );
+
+  // popupDescriptionOpen(
+  //   ".popup-main__button",
+  //   ".popup-description",
+  //   ".popup-description__close",
+  //   "active"
+  // );
 });

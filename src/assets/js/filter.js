@@ -1,5 +1,7 @@
 import postRequest from "./postRequest.js";
 import getRequest from "./getRequest";
+import popupDescriptionOpen from "./popupDescriptionOpen.js";
+
 const filter = (
   buttonSelector,
   contentSelector,
@@ -58,15 +60,16 @@ const filter = (
           errorBox.innerHTML = "No offers";
           errorBox.style.display = "block";
         }
-        closeButton.addEventListener("click", () => {
-          closeModal();
-        });
-        postRequest();
+        popupDescriptionOpen(
+          ".popup-main__button",
+          ".popup-description",
+          ".popup-description__close",
+          "active"
+        );
+        // postRequest();
       });
     })
     .then(() => {
-      // postRequest();
-
       closeButton.addEventListener("click", () => {
         closeModal();
       });

@@ -146,7 +146,7 @@
   }
 }
 // ---------------popup
-.popup-main {
+.main__popup {
   background-color: rgba(0, 0, 0, 0.809);
   position: fixed;
   z-index: 999;
@@ -155,6 +155,17 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s;
+}
+
+.popup-main {
+  // background-color: rgba(0, 0, 0, 0.809);
+  // position: fixed;
+  // z-index: 999;
+  // width: 100%;
+  // height: 100vh;
+  // opacity: 0;
+  // visibility: hidden;
+  // transition: opacity 0.2s;
 
   &.active {
     opacity: 1;
@@ -242,5 +253,26 @@
     &:hover {
       background-color: #116d62;
     }
+  }
+}
+
+.popup-description {
+  background-color: rgba(176, 13, 13, 0.809);
+  width: 100%;
+  height: 100vh;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__card {
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background-color: rgb(68, 125, 175);
   }
 }
