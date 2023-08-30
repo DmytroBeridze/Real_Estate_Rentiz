@@ -7,8 +7,7 @@ const search = (
   activeClass,
   state
 ) => {
-  const searchButton = document.querySelector(targetSelector),
-    infoButton = document.querySelectorAll(buttonSelector);
+  const infoButton = document.querySelectorAll(buttonSelector);
 
   infoButton.forEach((elem) => {
     if (!elem.matches(targetSelector)) {
@@ -23,7 +22,7 @@ const search = (
           let st = elem.dataset.type;
           state[st] = e.target.innerHTML;
         }
-        return state;
+        // return state;
       });
     }
   });

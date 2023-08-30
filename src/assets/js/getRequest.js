@@ -1,9 +1,11 @@
 const getRequest = async (url) => {
-  const request = async () => {
-    const request = await fetch(url),
-      response = await request.json();
+  const request = await fetch(url);
+  if (request.ok) {
+    const response = await request.json();
     return response;
-  };
-  return request();
+  } else {
+    throw new Error("Some error occurred");
+  }
 };
+
 export default getRequest;

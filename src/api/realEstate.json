@@ -8,6 +8,8 @@
 
     "img": "./img/jpg/main/main-bungalow.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "extended_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+
     "price": "5000000",
     "lot": "1"
   },
@@ -20,6 +22,8 @@
 
     "img": "./img/jpg/main/main-bungalow.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "extended_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+
     "price": "7500000",
     "lot": "2"
   },
@@ -32,6 +36,8 @@
 
     "img": "./img/jpg/main/main-bungalow.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "extended_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+
     "price": "8000000",
     "lot": "3"
   },
@@ -44,6 +50,8 @@
 
     "img": "./img/jpg/main/main-bungalow.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "extended_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+
     "price": "9520000",
     "lot": "4"
   },
@@ -56,8 +64,10 @@
 
     "img": "./img/jpg/main/main-bungalow.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "extended_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+
     "price": "10000000",
-    "lot": "4"
+    "lot": "17"
   },
   {
     "data": {
@@ -68,6 +78,8 @@
 
     "img": "./img/jpg/main/main-bungalow.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "extended_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+
     "price": "12000000",
     "lot": "14"
   },
@@ -80,6 +92,8 @@
 
     "img": "./img/jpg/main/main-bungalow.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "extended_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+
     "price": "4450000",
     "lot": "5"
   },
@@ -92,6 +106,7 @@
 
     "img": "./img/jpg/main/main-bungalow.jpg",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
+    "extended_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat maxime nam doloribus assumenda asperiores aspernatur soluta accusantium quis minima nobis vitae illum magnam ad a officiis, tempora eos accusamus nihil!",
     "price": "5690000",
     "lot": "6"
   }
