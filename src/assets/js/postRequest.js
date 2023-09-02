@@ -1,6 +1,10 @@
-const postRequest = (orderNumber, messageContainerSelector) => {
+const postRequest = (
+  orderNumber,
+  messageContainerSelector,
+  popupButtonSelector
+) => {
   let messageContainer = document.querySelector(messageContainerSelector);
-  let orderBtn = document.querySelector(".popup-description__button");
+  let orderBtn = document.querySelector(popupButtonSelector);
 
   const statusMessage = {
     processing: "Order processing",

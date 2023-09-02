@@ -1,9 +1,7 @@
-// import postRequest from "./postRequest.js";
-// import postRequest from "./postRequest";
 import getRequest from "./getRequest";
 import popupDescriptionOpen from "./popupDescriptionOpen.js";
 
-const filter = (
+const filter = async (
   buttonSelector,
   popupSelector,
   contentSelector,
@@ -32,6 +30,7 @@ const filter = (
   };
 
   button.addEventListener("click", () => {
+    let test = [];
     getRequest(URL)
       .then((json) => {
         let result = json.filter((elem) => {
@@ -40,6 +39,7 @@ const filter = (
             JSON.stringify(state).toLowerCase()
           );
         });
+
         if (result.length > 0) {
           result.forEach((elem) => {
             let { img, price, description, lot, data } = elem;
@@ -90,7 +90,6 @@ const filter = (
         // postRequest(orderNumber);
       })
       .catch((e) => {
-        // console.log(e.message);
         errorBox.innerHTML = e.message;
         errorBox.style.display = "block";
       })
