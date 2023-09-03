@@ -55,6 +55,15 @@ const devStyles = () => {
       .pipe(browserSync.stream())
   );
 };
+// ----------------------css
+const devCss = () => {
+  return (
+    src("./src/assets/scss/**/*.css")
+      // .pipe(cleanCSS({compatibility: 'ie8'}))
+      .pipe(dest("./dist"))
+      .pipe(browserSync.stream())
+  );
+};
 // -----------------------js
 const scripts = () => {
   return (
@@ -114,6 +123,7 @@ const browsersync = () => {
   });
   watch("./src/index.html", devHtml);
   watch("./src/assets/scss/**/*.scss", devStyles);
+  watch("./src/assets/scss/**/*.css", devCss);
   watch("./src/assets/js/**/*.js", scripts);
   watch("./src/assets/img/**", devImg);
   watch("./src/assets/fonts/**", devFonts);
@@ -123,8 +133,18 @@ const browsersync = () => {
 // ---------------------------tasks for start of console
 exports.default = series(
   clean,
-  parallel(devHtml, scripts, devImg, devFonts, favicon, devApi),
-  devStyles,
+  parallel(
+    devHtml,
+    devStyles,
+    devCss,
+    scripts,
+    devImg,
+    devFonts,
+    favicon,
+    devApi
+  ),
+  // devStyles,
+  // devCss,
   browsersync
 );
 exports.htmlInclude = devHtml;
@@ -147,11 +167,18 @@ const htmlBuild = () => {
     .pipe(dest("./dist"));
 };
 // ----------------------------style
-const cssBuild = () => {
+const scssBuild = () => {
   return src("./src/assets/scss/**/*.scss")
     .pipe(sass().on("error", notify.onError()))
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(dest("./dist"));
+};
+// ----------------------css
+const cssBuild = () => {
+  return src("./src/assets/scss/**/*.css")
+    .pipe(cleanCSS({ compatibility: "ie8" }))
+    .pipe(dest("./dist"))
+    .pipe(browserSync.stream());
 };
 // ---------------------------script
 const jsBuild = () => {
@@ -183,6 +210,15 @@ const jsBuild = () => {
 
 exports.build = series(
   clean,
-  parallel(htmlBuild, cssBuild, jsBuild, devFonts, devImg, favicon, devApi),
+  parallel(
+    htmlBuild,
+    scssBuild,
+    cssBuild,
+    jsBuild,
+    devFonts,
+    devImg,
+    favicon,
+    devApi
+  ),
   browsersync
 );

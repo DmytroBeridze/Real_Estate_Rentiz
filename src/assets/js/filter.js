@@ -1,50 +1,50 @@
-import { getRequest } from "./realEstateRequest.js";
-import postRequest from "./postRequest.js";
-const filter = (
+import getRequest from "./getRequest";
+import popupDescriptionOpen from "./popupDescriptionOpen.js";
+
+const filter = async (
   buttonSelector,
+  popupSelector,
   contentSelector,
   errorContainer,
   closeButtonSelector,
+  URL,
   state,
-  URL
+  orderNumber
 ) => {
   const button = document.querySelector(buttonSelector),
+    popup = document.querySelector(popupSelector),
     content = document.querySelector(contentSelector),
     errorBox = document.querySelector(errorContainer),
     closeButton = document.querySelector(closeButtonSelector);
 
   // --------open
   const openModal = () => {
-    content.classList.add("active");
+    popup.classList.add("active");
     document.body.classList.add("active");
   };
   //-------- close
   const closeModal = () => {
-    content.classList.remove("active");
+    popup.classList.remove("active");
     document.body.classList.remove("active");
-    document.querySelector(".popup-main__card").innerHTML = "";
+    content.innerHTML = "";
   };
 
   button.addEventListener("click", () => {
-    const realEstateRequest = async () => {
-      const request = await fetch(URL),
-        response = await request.json();
-      return response;
-    };
-    // getRequest(URL)
-    realEstateRequest()
-      .then((response) => {
-        let result = response.filter((elem) => {
+    let test = [];
+    getRequest(URL)
+      .then((json) => {
+        let result = json.filter((elem) => {
           return (
             JSON.stringify(elem.data).toLowerCase() ==
             JSON.stringify(state).toLowerCase()
           );
         });
+
         if (result.length > 0) {
           result.forEach((elem) => {
             let { img, price, description, lot, data } = elem;
             let { purpose } = data;
-            document.querySelector(".popup-main__card").innerHTML += `
+            content.innerHTML += `
             <div class="popup-main__card-wrapper">
           <div class="popup-main__img">
           <img src="${img}" alt="card">
@@ -53,7 +53,7 @@ const filter = (
           <div class="popup-main__desc">${description}</div>
           <div class="popup-main__order-container">
           <div class="popup-main__price"> Price: ${price}</div>
-          <button class="popup-main__button" data-lot="${lot}" data-price="${price}"  data-purpose="${purpose}">Order</button>
+          <button class="popup-main__button buttons" data-lot="${lot}" data-price="${price}"  data-purpose="${purpose}">more details</button>
           </div>
           </div>
         </div>
@@ -64,15 +64,33 @@ const filter = (
           errorBox.innerHTML = "No offers";
           errorBox.style.display = "block";
         }
+        return json;
       })
-      .then(() => {
-        postRequest();
+
+      .then((json) => {
+        popupDescriptionOpen(
+          ".popup-main__button",
+          ".popup-description",
+          ".popup-description__info",
+          ".popup-description__close",
+          "active",
+          json,
+          orderNumber
+        );
         closeButton.addEventListener("click", () => {
           closeModal();
         });
+        popup.addEventListener("click", (e) => {
+          if (e.target == popup) {
+            closeModal();
+          }
+        });
+      })
+      .then(() => {
+        // postRequest(orderNumber);
       })
       .catch((e) => {
-        errorBox.innerHTML = "Error";
+        errorBox.innerHTML = e.message;
         errorBox.style.display = "block";
       })
       .finally(() => {

@@ -1,12 +1,15 @@
 import burger from "./burger";
 import search from "./search.js";
 import filter from "./filter.js";
-// import realEstateRequest from "./realEstateRequest.js";
+import postRequest from "./postRequest";
+
+const errorBox = document.querySelector(".search__error");
+
 document.addEventListener("DOMContentLoaded", () => {
   burger(".menu__burger-icon", ".header__menu", ".menu__link", "active");
 
   let state = {};
-
+  let orderNumber = {};
   search(
     ".item-button",
     ".search__item",
@@ -16,13 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
     "active",
     state
   );
-
   filter(
     ".search__button_container",
     ".popup-main",
+    ".popup-main__card",
     ".search__error",
     ".popup-main__close",
+    "./api/realEstate.json",
     state,
-    "./api/realEstate.json"
+    orderNumber
+  );
+  postRequest(
+    orderNumber,
+    ".popup-description__message",
+    ".popup-description__button"
   );
 });
