@@ -126,7 +126,6 @@ const browsersync = () => {
   watch("./src/assets/scss/**/*.scss", devStyles);
   watch("./src/assets/scss/**/*.css", devCss);
   watch("./src/assets/js/**/*.js", scripts);
-  // watch("./src/assets/js/**/*.js", scripts);
   watch("./src/assets/img/**", devImg);
   watch("./src/assets/fonts/**", devFonts);
   watch("./src/*.ico", favicon);
