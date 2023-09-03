@@ -9,7 +9,6 @@ const del = require("del");
 const newer = require("gulp-newer");
 const imagemin = require("gulp-imagemin");
 const fileinclude = require("gulp-file-include");
-const css = require("gulp-clean-css");
 const babel = require("gulp-babel");
 const sourcemaps = require("gulp-sourcemaps");
 
@@ -134,9 +133,18 @@ const browsersync = () => {
 // ---------------------------tasks for start of console
 exports.default = series(
   clean,
-  parallel(devHtml, scripts, devImg, devFonts, favicon, devApi),
-  devStyles,
-  devCss,
+  parallel(
+    devHtml,
+    devStyles,
+    devCss,
+    scripts,
+    devImg,
+    devFonts,
+    favicon,
+    devApi
+  ),
+  // devStyles,
+  // devCss,
   browsersync
 );
 exports.htmlInclude = devHtml;

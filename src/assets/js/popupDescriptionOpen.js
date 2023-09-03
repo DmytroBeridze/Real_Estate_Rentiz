@@ -1,5 +1,4 @@
-// import postRequest from "./postRequest";
-
+import galery from "./galery.js";
 // import Swiper JS
 import Swiper from "swiper";
 import { Navigation, Pagination } from "swiper/modules";
@@ -40,12 +39,12 @@ const popupDescriptionOpen = (
     }
   };
   // --------galery
-  const galery = (arr) => {
+  const sliderGalery = (arr) => {
     let galeryArr = arr[0].galery;
     let galery = "";
     galeryArr.forEach((elem) => {
       galery += ` 
-      <div class="swiper-slide slidePopup"> <img src="${elem}" alt="" /></div>`;
+      <div class="swiper-slide slide-popup"> <img src="${elem}" alt="" /></div>`;
     });
     return galery;
   };
@@ -66,7 +65,7 @@ const popupDescriptionOpen = (
       <div class="slider-popup">
         <div class="swiper slider-popup-description">
             <div class="swiper-wrapper">
-              ${galery(result)}
+              ${sliderGalery(result)}
             </div>
             </div>
             <div class="swiper-button__wrapper">
@@ -104,6 +103,7 @@ const popupDescriptionOpen = (
           el: ".swiper-scrollbar",
         },
       });
+      galery();
     });
   });
   // --------close button
@@ -118,4 +118,3 @@ const popupDescriptionOpen = (
   });
 };
 export default popupDescriptionOpen;
-// <div class="popup-description__galery">${galery(result)}</div>

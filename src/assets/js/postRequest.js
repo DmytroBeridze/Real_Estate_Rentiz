@@ -5,15 +5,18 @@ const postRequest = (
 ) => {
   let messageContainer = document.querySelector(messageContainerSelector);
   let orderBtn = document.querySelector(popupButtonSelector);
+  const loader = document.createElement("div");
+  loader.classList.add("loader");
 
   const statusMessage = {
     processing: "Order processing",
     success: "Order successfully submitted",
     error: "Order error",
   };
-  // orderBtn.disabled = false;
   const setRequest = async (data) => {
-    messageContainer.innerHTML = statusMessage.processing;
+    // messageContainer.innerHTML = statusMessage.processing;
+    // messageContainer.style.color = "var(--gray-text-color)";
+    messageContainer.append(loader);
     messageContainer.style.display = "block";
     const request = await fetch(
       "https://test-key-d6afb-default-rtdb.firebaseio.com/test.json",
@@ -32,17 +35,17 @@ const postRequest = (
   orderBtn.addEventListener("click", (e) => {
     setRequest(orderNumber)
       .then(() => {
+        messageContainer.style.color = "var(--accent-color)";
         messageContainer.innerHTML = statusMessage.success;
-        messageContainer.style.display = "block";
         orderBtn.disabled = true;
       })
       .catch((e) => {
         messageContainer.innerHTML = statusMessage.error;
-        messageContainer.style.display = "block";
       })
       .finally(() => {
         setTimeout(() => {
-          messageContainer.style.display = "none";
+          messageContainer.innerHTML = "";
+          messageContainer.style.color = "rgb(248, 47, 16)";
         }, 3000);
       });
   });
