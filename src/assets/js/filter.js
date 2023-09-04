@@ -30,7 +30,6 @@ const filter = async (
   };
 
   button.addEventListener("click", () => {
-    let test = [];
     getRequest(URL)
       .then((json) => {
         let result = json.filter((elem) => {
@@ -85,9 +84,6 @@ const filter = async (
             closeModal();
           }
         });
-      })
-      .then(() => {
-        // postRequest(orderNumber);
       })
       .catch((e) => {
         errorBox.innerHTML = e.message;
