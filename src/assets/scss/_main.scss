@@ -75,6 +75,15 @@
     right: 0;
     bottom: -240px;
     z-index: -1;
+
+    @media (max-width: 576px) {
+      bottom: -100px;
+    }
+    & svg {
+      @media (max-width: 576px) {
+        height: 300px;
+      }
+    }
   }
 }
 // -----------------serch
