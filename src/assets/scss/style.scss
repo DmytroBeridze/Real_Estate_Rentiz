@@ -11,6 +11,15 @@ body {
     overflow: hidden;
   }
 }
+.section-titles {
+  color: var(--main-text-color);
+  font-size: clamp(1.5rem, 1.064rem + 2.18vw, 3rem);
+  // font-size: 48px;
+  font-weight: 600;
+  line-height: 126%;
+  text-transform: capitalize;
+}
 
 @import "./header";
 @import "./main";
+@import "./featured";
