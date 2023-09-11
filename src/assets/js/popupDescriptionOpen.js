@@ -8,6 +8,7 @@ const popupDescriptionOpen = (
   popupSelector,
   contentSelector,
   closeButtonSelector,
+  closeButtonSelectorBlack,
   activeClass,
   response,
   orderNumber
@@ -16,7 +17,8 @@ const popupDescriptionOpen = (
   const openButton = document.querySelectorAll(openButtonSelector),
     popup = document.querySelector(popupSelector),
     content = document.querySelector(contentSelector),
-    closeBtn = document.querySelector(closeButtonSelector);
+    closeBtn = document.querySelector(closeButtonSelector),
+    closeBtnBlack = document.querySelector(closeButtonSelectorBlack);
   //------------ open
   const openModal = () => {
     popup.classList.add(activeClass);
@@ -54,7 +56,6 @@ const popupDescriptionOpen = (
     button.addEventListener("click", (e) => {
       // ------------enabled postRequest button
       document.querySelector(".popup-description__button").disabled = false;
-
       let result = response.filter((elem) => {
         return elem.lot == e.target.dataset.lot;
       });
@@ -63,9 +64,10 @@ const popupDescriptionOpen = (
         result[0].data.location
       }</div>
       <div class="slider-popup">
-        <div class="swiper slider-popup-description">
-            <div class="swiper-wrapper">
-              ${sliderGalery(result)}
+      <div class="swiper slider-popup-description">
+      <div class="swiper-wrapper">
+      ${sliderGalery(result)}
+             
             </div>
             </div>
             <div class="swiper-button__wrapper">
@@ -88,26 +90,42 @@ const popupDescriptionOpen = (
       openModal();
       hideSliderArrow(result);
 
+      galery();
       // -----------popup Decoration Slider initial
       const swiper = new Swiper(".slider-popup-description", {
         modules: [Navigation, Pagination],
 
-        slidesPerView: 3,
+        slidesPerView: 1,
         spaceBetween: 10,
         // Navigation arrows
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        scrollbar: {
-          el: ".swiper-scrollbar",
+
+        // responsive
+        breakpoints: {
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          660: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
         },
       });
-      galery();
     });
   });
   // --------close button
   closeBtn.addEventListener("click", () => {
+    closeModal();
+  });
+  closeBtnBlack.addEventListener("click", () => {
     closeModal();
   });
   // --------close popup

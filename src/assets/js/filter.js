@@ -72,6 +72,7 @@ const filter = async (
           ".popup-description",
           ".popup-description__info",
           ".popup-description__close",
+          ".popup-description__close-black",
           "active",
           json,
           orderNumber

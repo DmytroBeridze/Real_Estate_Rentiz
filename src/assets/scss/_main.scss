@@ -16,20 +16,36 @@
 // -----------------main
 
 .main {
-  padding-top: 100px;
+  // padding-top: 100px;
+  padding-top: clamp(1.25rem, -0.205rem + 7.27vw, 6.25rem);
   position: relative;
   &__body {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: clamp(0.313rem, 0.04rem + 1.36vw, 1.25rem);
+    @media (max-width: 992px) {
+      flex-direction: column;
+      // gap: 15px;
+    }
+    @media (max-width: 576px) {
+      gap: 50px;
+    }
+    @media (max-width: 480px) {
+      gap: 10px;
+    }
   }
   &__information {
-    flex: 0 0 50%;
+    // flex: 0 0 50%;
+    flex: 0 0 calc(700px / 1420px * 100%);
     position: relative;
     padding-bottom: 100px;
+    @media (max-width: 480px) {
+      padding-bottom: 0;
+    }
   }
   &__header {
-    font-size: 68px;
+    // font-size: 68px;
+    font-size: clamp(1.5rem, 0.7rem + 4vw, 4.25rem);
     font-weight: 600;
     line-height: 126%;
     text-transform: capitalize;
@@ -42,21 +58,22 @@
     line-height: 170%;
   }
   &__img {
+    flex: 0 0 calc(700px / 1420px * 100%);
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+      display: none;
+    }
     & img {
       width: 100%;
       height: 100%;
-      // width: 700px;
-      // height: 645px;
-      // background-image: url("./img/jpg/main/main-bungalow.jpg");
-      // background-position: center;
-      // background-size: contain;
-      // background-repeat: no-repeat;
     }
   }
   &__decor {
     position: absolute;
     right: 0;
-    top: 500px;
+    bottom: -240px;
     z-index: -1;
   }
 }
@@ -65,22 +82,44 @@
   width: 900px;
   height: 100px;
   position: absolute;
-  background-color: rgb(204, 200, 200);
+  background-color: var(--main-text-color);
   color: var(--black-text-color);
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 173px;
+  grid-template-columns: 1fr 1fr 1fr 183px;
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 20px;
+    height: auto;
+    // position: static;
+  }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    position: static;
+  }
 
   &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     position: relative;
     text-transform: capitalize;
-    background-color: var(--main-text-color);
+    cursor: pointer;
+    // background-color: var(--main-text-color);
+
     &:nth-child(2) {
-      border-left: 1px solid rgb(204, 200, 200);
-      border-right: 1px solid rgb(204, 200, 200);
+      border-left: 1px solid rgb(228, 224, 224);
+      border-right: 1px solid rgb(228, 224, 224);
     }
   }
   &__info {
-    padding: 28px 40px;
+    display: flex;
+    flex-direction: column;
+    margin-left: clamp(0.625rem, 0.08rem + 2.73vw, 2.5rem);
+    justify-content: center;
     cursor: pointer;
   }
   &__header {
@@ -116,19 +155,25 @@
     box-shadow: 0px 13px 36px -6px rgba(0, 0, 0, 0.59);
     left: 0;
     right: 0;
-    // transform: translateY(8px);
+    top: 100%;
+
     border-radius: 5px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.2s;
+    z-index: 1;
     &.active {
       opacity: 1;
       visibility: visible;
       transform: translateY(8px);
     }
+
     & li {
       padding: 10px 40px;
-      padding-top: 10px;
+      @media (max-width: 768px) {
+        padding: 10px 10px;
+      }
+
       &:hover {
         background: rgba(0, 0, 0, 0.128);
       }
@@ -142,6 +187,10 @@
   }
   & .item-button {
     padding: 5px;
+    @media (max-width: 576px) {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
   }
   &__button_container {
     background-color: var(--accent-color);
@@ -156,6 +205,9 @@
     cursor: pointer;
     &:hover {
       background-color: #116d62;
+    }
+    @media (max-width: 576px) {
+      padding: 10px 30px;
     }
   }
   // --------error box
@@ -190,6 +242,9 @@
     position: absolute;
     right: 40px;
     top: 40px;
+    @media (max-width: 768px) {
+      right: 25px;
+    }
     & img {
       width: 100%;
       height: 100%;
@@ -197,7 +252,8 @@
   }
   &__card {
     background-color: rgb(250, 252, 252);
-    max-width: 1000px;
+    max-width: clamp(18.75rem, 6.023rem + 63.64vw, 62.5rem);
+    // max-width: 1000px;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -222,9 +278,12 @@
   }
   &__img {
     flex: 0 0 30%;
-    height: 230px;
+    height: clamp(6.25rem, 3.886rem + 11.82vw, 14.375rem);
     padding: 10px;
-
+    flex: 0 0 30%;
+    @media (max-width: 576px) {
+      display: none;
+    }
     & img {
       width: 100%;
       height: 100%;
@@ -255,16 +314,19 @@
     gap: 10px;
     // gap: clamp(0.625rem, -3.819rem + 22.22vw, 15.625rem);
     align-items: center;
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: stretch;
+    }
   }
   &__button {
     transition: background-color 0.2s;
+    margin-right: 0;
   }
 }
 // -------------------popup description
 .popup-description {
-  width: 100%;
   height: 100vh;
-  // position: relative;
 
   &.active {
     opacity: 1;
@@ -277,15 +339,22 @@
     position: absolute;
     right: 40px;
     top: 40px;
+    @media (max-width: 992px) {
+      display: none;
+    }
     & img {
       width: 100%;
       height: 100%;
     }
   }
+
   &__card {
-    max-width: 1000px;
-    height: fit-content;
-    position: absolute;
+    // max-width: clamp(12.5rem, -2.315rem + 74.07vw, 62.5rem);
+    max-width: clamp(18.75rem, 6.023rem + 63.64vw, 62.5rem);
+    height: 100vh;
+    overflow: auto;
+    // height: fit-content;
+    position: relative;
     left: 0;
     right: 0;
     bottom: 0;
@@ -298,7 +367,28 @@
     align-items: center;
     gap: 20px;
     padding: 40px 50px;
+    @media (max-width: 768) {
+      // overflow: auto;
+    }
   }
+  &__close-black {
+    position: absolute;
+    display: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    top: 20px;
+    z-index: 999;
+    @media (max-width: 992px) {
+      display: block;
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &__location {
     font-size: 30px;
     font-weight: 600;
@@ -321,9 +411,11 @@
     }
   }
   &__info {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: clamp(1.25rem, 0.694rem + 2.78vw, 3.125rem);
+
     // position: relative;
   }
   &__text {
@@ -333,6 +425,9 @@
   &__price {
     font-size: 20px;
     font-weight: 600;
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   }
   &__button {
     margin: 0;
@@ -355,9 +450,9 @@
 .slider-popup {
   position: relative;
 }
+
 .slider-popup-description {
-  width: 900px;
-  height: 250px;
+  // height: 250px;
   overflow: hidden;
   position: relative;
 }
@@ -369,12 +464,22 @@
   position: absolute;
   display: flex;
   justify-content: space-between;
-  width: 900px;
+  width: 100%;
   height: 50px;
   top: calc(50% - 20px);
   z-index: 999;
   gap: 40px;
   pointer-events: none;
+  @media (max-width: 992px) {
+    width: 50px;
+    top: -35px;
+    right: 0px;
+    gap: 20px;
+  }
+  @media (max-width: 576px) {
+    width: 25px;
+    top: -22px;
+  }
 }
 .slider-popup-description__btn {
   position: relative;
@@ -389,6 +494,18 @@
   background-size: auto;
   pointer-events: all;
   cursor: pointer;
+  @media (max-width: 992px) {
+    width: 30px;
+    height: 30px;
+    background-position: 6px;
+    background-size: 10px;
+  }
+  @media (max-width: 576px) {
+    width: 20px;
+    height: 20px;
+    background-position: 3px;
+    background-size: 8px;
+  }
 }
 .prev {
   position: absolute;
@@ -399,6 +516,9 @@
   transform: rotate(180deg);
   position: absolute;
   right: -20px;
+  @media (max-width: 992px) {
+    right: 0;
+  }
 }
 .slide-popup {
   cursor: pointer;
@@ -423,8 +543,9 @@
     visibility: visible;
   }
   &__contentContainer {
-    max-width: 1000px;
-    height: 800px;
+    // max-width: 700px;
+    max-width: clamp(12.5rem, 1.136rem + 56.82vw, 43.75rem);
+    height: fit-content;
     background-color: rgb(220, 214, 214);
     position: absolute;
     top: 0;
