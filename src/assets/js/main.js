@@ -2,6 +2,7 @@ import burger from "./burger";
 import search from "./search.js";
 import filter from "./filter.js";
 import postRequest from "./postRequest";
+import popularResidense from "./popularResidense.js";
 
 const errorBox = document.querySelector(".search__error");
 
@@ -34,4 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
     ".popup-description__message",
     ".popup-description__button"
   );
+
+  popularResidense();
 });

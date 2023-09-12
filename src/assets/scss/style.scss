@@ -19,7 +19,20 @@ body {
   line-height: 126%;
   text-transform: capitalize;
 }
+.section-buttons {
+  padding: 22px 42px;
+  background-color: var(--accent-color);
+  border: none;
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--main-text-color);
+  &:hover {
+    background-color: #116e63;
+  }
+}
 
 @import "./header";
 @import "./main";
 @import "./featured";
+@import "./popular-residense";
