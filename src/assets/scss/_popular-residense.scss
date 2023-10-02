@@ -31,7 +31,8 @@
     top: calc(50% - 100px);
     width: 100%;
     height: 78px;
-    z-index: 999;
+    pointer-events: none;
+    // z-index: 999;
     @media (max-width: 1800px) {
       top: -100px;
       right: 0;
@@ -55,6 +56,7 @@
     background-repeat: no-repeat;
     background-size: auto;
     position: absolute;
+    pointer-events: all;
     @media (max-width: 1800px) {
       position: static;
     }
@@ -76,6 +78,16 @@
   &__next {
     right: calc(-50px - 78px);
     transform: rotate(180deg);
+  }
+  &__bigImg-cont {
+    max-width: clamp(18.75rem, 9.659rem + 45.45vw, 50rem);
+    max-height: clamp(18.75rem, 10.568rem + 40.91vw, 46.875rem);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
   }
   &__wiew-button {
     text-align: center;
@@ -135,5 +147,89 @@
       font-weight: 400;
       text-transform: capitalize;
     }
+  }
+}
+
+// Popular Residence popup
+.properties {
+  max-width: clamp(18.75rem, 6.023rem + 63.64vw, 62.5rem);
+  height: 100vh;
+  // width: 1200px;
+  background-color: aliceblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: auto;
+  &__close {
+    display: none;
+    z-index: 999;
+    @media (max-width: 768px) {
+      display: block;
+      position: fixed;
+      right: 18%;
+      top: 4%;
+    }
+  }
+  &__galery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+    // background-color: #1a242f;
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+    }
+  }
+  &__card {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+// galery popup
+.popup-properties {
+  &__bigImg-cont {
+    width: clamp(18.75rem, 11.477rem + 36.36vw, 43.75rem);
+    height: clamp(18.75rem, 12.75rem + 30vw, 39.375rem);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &__close {
+    @media (max-width: 768px) {
+      display: none;
+      // display: block;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.properties-galery__close {
+  @media (max-width: 768px) {
+    display: none;
+    // display: block;
   }
 }

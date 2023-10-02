@@ -28,7 +28,7 @@ const burger = (
   // ------------links
   links.forEach((elem) => {
     elem.addEventListener("click", (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       close();
     });
   });

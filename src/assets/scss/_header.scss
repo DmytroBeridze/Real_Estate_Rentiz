@@ -3,6 +3,7 @@
   // padding-top: 50px;
   padding-top: clamp(1.875rem, 1.511rem + 1.82vw, 3.125rem);
   position: relative;
+  z-index: 2;
   &__container {
     display: flex;
     justify-content: space-between;

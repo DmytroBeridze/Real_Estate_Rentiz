@@ -1,26 +1,40 @@
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
-const popularResidense = () => {
-  const popularResidenceSwiper = new Swiper(".popular-residence__slider", {
-    modules: [Navigation, Pagination],
+const popularResidense = (
+  targetSelector,
+  contentSelector,
+  imgContainerSelector,
+  buttonCloseSelector,
+  activeClass,
+  responsiveClose = null
+) => {
+  const galeryContainer = document.querySelector(targetSelector),
+    content = document.querySelector(contentSelector),
+    bigImg = document.querySelector(imgContainerSelector),
+    closeBtn = document.querySelector(buttonCloseSelector),
+    responsiveCloseBtn = document.querySelector(responsiveClose);
+  galeryContainer.addEventListener("click", (e) => {
+    if (e.target.tagName == "IMG") {
+      content.classList.add(activeClass);
+      if (e.target.parentNode != closeBtn) {
+        let imgSrc = e.target.getAttribute("src");
 
-    // Optional parameters
-    spaceBetween: 20,
-    slidesPerView: 1,
-    // loop: true,
-    breakpoints: {
-      992: {
-        slidesPerView: 3,
-      },
-      654: {
-        slidesPerView: 2,
-      },
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
+        bigImg.innerHTML = `<img class="popup-properties__img" src="${imgSrc}" alt="" />`;
+      }
+    }
+  });
+
+  // close
+  content.addEventListener("click", (e) => {
+    if (e.target == content) {
+      content.classList.remove(activeClass);
+    }
+  });
+  closeBtn.addEventListener("click", (e) => {
+    content.classList.remove(activeClass);
+  });
+  //------responsive btn
+  responsiveCloseBtn.addEventListener("click", (e) => {
+    document.querySelector(".popup-properties").classList.remove(activeClass);
+    document.body.classList.remove(activeClass);
   });
 };
 export default popularResidense;
