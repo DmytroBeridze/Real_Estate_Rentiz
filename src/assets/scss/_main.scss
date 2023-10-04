@@ -14,10 +14,12 @@
   }
 }
 // -----------------main
-
+#home {
+  display: block;
+}
 .main {
   // padding-top: 100px;
-  padding-top: clamp(1.25rem, -0.205rem + 7.27vw, 6.25rem);
+  padding-top: clamp(6.25rem, 4.759rem + 7.45vw, 11.375rem);
   position: relative;
   &__body {
     display: flex;
@@ -213,7 +215,7 @@
     text-transform: capitalize;
     cursor: pointer;
     &:hover {
-      background-color: #116d62;
+      background-color: #116e63;
     }
     @media (max-width: 576px) {
       padding: 10px 30px;

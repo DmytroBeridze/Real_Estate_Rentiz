@@ -56,10 +56,10 @@ const popupDescriptionOpen = (
     button.addEventListener("click", (e) => {
       // ------------enabled postRequest button
       document.querySelector(".popup-description__button").disabled = false;
+
       let result = response.filter((elem) => {
         return elem.lot == e.target.dataset.lot;
       });
-
       let description = `<div class="popup-description__location">${
         result[0].data.location
       }</div>
